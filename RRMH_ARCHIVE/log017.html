@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>LOG 017 - LOOP CONFIRMATION</title>
+
+<style>
+body{
+  background:black;
+  color:#00ff9d;
+  font-family:monospace;
+  padding:20px;
+}
+
+.glitch{
+  animation:glitch 1.2s infinite;
+}
+
+@keyframes glitch{
+  0%{text-shadow:2px 0 red,-2px 0 blue;}
+  25%{text-shadow:-2px 0 red,2px 0 blue;}
+  50%{text-shadow:2px 2px red,-2px -2px blue;}
+  75%{text-shadow:-2px 2px red,2px -2px blue;}
+  100%{text-shadow:2px 0 red,-2px 0 blue;}
+}
+
+.box{
+  border:1px solid #00ff9d;
+  padding:15px;
+  margin-top:15px;
+}
+
+.small{
+  opacity:0.4;
+}
+</style>
+</head>
+
+<body>
+
+<!-- 💓 persistent heartbeat -->
+<iframe src="audio.html" style="display:none;"></iframe>
+
+<h1 class="glitch">LOG 017 - LOOP CONFIRMATION</h1>
+
+<div class="box">
+<p>
+System stabilisation complete.<br><br>
+
+All previous logs have converged into a single structural state.<br>
+Observed timeline divergence: NONE<br><br>
+
+Reality classification: <span class="glitch">HOSPITAL STRUCTURE ACTIVE</span>
+</p>
+</div>
+
+<div class="box">
+<p>
+CCTV correlation report:<br>
+- hallway feeds consistent across all logs<br>
+- basement feed shows recursive anomaly patterns<br>
+- unknown feed matches prior corruption layer
+</p>
+</div>
+
+<div class="box">
+<p>
+Personnel status:<br>
+Ralph Rod — oversight function stable<br>
+Christina Forest — stabilisation active<br>
+Raj Singh — interpretation locked<br>
+Jim Singh — archive enforcement ongoing<br>
+Will Rob — routing continuous<br><br>
+
+Employee 372552 — <span class="glitch">BOUNDARY IDENTIFIED</span>
+</p>
+</div>
+
+<div class="box">
+<p class="glitch">
+THIS CYCLE IS ALREADY COMPLETE
+</p>
+</div>
+
+<div class="box small">
+<p>
+note: accessing previous logs produces identical outcomes regardless of order<br>
+memory sequencing is no longer linear<br>
+observer feedback detected in archive layer
+</p>
+</div>
+
+<!-- 🔁 LOOP MECHANIC -->
+<script>
+
+// simulate loop awareness from site memory
+let visits = localStorage.getItem("rrmh_seen") || 1;
+visits = parseInt(visits);
+
+// escalate perception over time
+if(visits > 3){
+  document.body.innerHTML += `
+    <div class="box glitch">
+      YOU HAVE BEEN HERE BEFORE<br>
+      THIS ENTRY HAS OCCURRED MULTIPLE TIMES
+    </div>
+  `;
+}
+
+if(visits > 6){
+  setTimeout(()=>{
+    document.body.innerHTML += `
+      <div class="box">
+        LOG 001 DETECTED WITHIN LOG 017 STRUCTURE
+      </div>
+    `;
+  }, 2000);
+}
+
+if(visits > 9){
+  setTimeout(()=>{
+    document.body.innerHTML += `
+      <div class="box glitch">
+        LOOP CORRECTION INITIATED
+      </div>
+    `;
+  }, 4000);
+}
+
+// redirect back into cycle (subtle loop reinforcement)
+setTimeout(()=>{
+  window.location.href = "log001.html";
+}, 12000);
+
+</script>
+
+</body>
+</html>

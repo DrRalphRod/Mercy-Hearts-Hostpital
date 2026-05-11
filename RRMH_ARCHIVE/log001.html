@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>LOG 001 - INITIATION</title>
+
+<style>
+body{
+  background:black;
+  color:#00ff9d;
+  font-family:monospace;
+  padding:20px;
+}
+
+.glitch{
+  animation:glitch 1.2s infinite;
+}
+
+@keyframes glitch{
+  0%{text-shadow:2px 0 red,-2px 0 blue;}
+  25%{text-shadow:-2px 0 red,2px 0 blue;}
+  50%{text-shadow:2px 2px red,-2px -2px blue;}
+  75%{text-shadow:-2px 2px red,2px 2px blue;}
+  100%{text-shadow:2px 0 red,-2px 0 blue;}
+}
+
+.box{
+  border:1px solid #00ff9d;
+  padding:15px;
+  margin-top:15px;
+}
+
+.small{
+  opacity:0.4;
+}
+
+.faint{
+  opacity:0.2;
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- 💓 heartbeat persists -->
+<iframe src="audio.html" style="display:none;"></iframe>
+
+<h1 class="glitch">LOG 001 - INITIATION</h1>
+
+<div class="box">
+<p>
+Initial stabilisation procedures completed.<br><br>
+
+Subject: 372552<br>
+Role assignment: boundary stabilisation node<br><br>
+
+System response: within expected parameters
+</p>
+</div>
+
+<div class="box">
+<p>
+Environmental report:<br>
+- corridors functional<br>
+- basement sealed<br>
+- CCTV nodes active<br><br>
+
+No anomalies recorded at this stage.
+</p>
+</div>
+
+<div class="box">
+<p>
+Personnel integration:<br>
+Ralph Rod — oversight layer engaged<br>
+Christina Forest — surgical stabilisation protocols prepared<br>
+Raj Singh — interpretation systems online<br>
+Jim Singh — record enforcement initialised<br>
+Will Rob — logistics routing active
+</p>
+</div>
+
+<div class="box faint">
+<p>
+note: subject 372552 displays minimal resistance to structural alignment
+</p>
+</div>
+
+<div class="box small">
+<p>
+archive status: recording cycle baseline<br>
+loop integrity: not yet established
+</p>
+</div>
+
+<!-- 🧠 subtle system memory hook -->
+<script>
+
+let visits = localStorage.getItem("rrmh_seen") || 1;
+visits = parseInt(visits);
+
+// slight “future awareness”
+if(visits > 2){
+  document.body.innerHTML += `
+    <div class="box glitch">
+      NOTE: FUTURE LOGS MAY CONTAIN RECURSIVE VARIATION
+    </div>
+  `;
+}
+
+// early hint of corruption
+if(visits > 5){
+  setTimeout(()=>{
+    document.body.innerHTML += `
+      <div class="box">
+        OBSERVER EFFECT NOTED IN ARCHIVE ACCESS PATTERN
+      </div>
+    `;
+  }, 2000);
+}
+
+// return to system flow
+setTimeout(()=>{
+  window.location.href = "logs.html";
+}, 10000);
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>RRMH ARCHIVE SYSTEM</title>
+
+<style>
+
+body{
+    margin:0;
+    background:black;
+    color:#00ff9d;
+    font-family:monospace;
+    text-align:center;
+}
+
+/* TITLE */
+h1{
+    margin-top:40px;
+    font-size:28px;
+    letter-spacing:3px;
+    text-shadow:0 0 10px #00ff9d;
+}
+
+/* SUBTEXT */
+p{
+    opacity:0.7;
+}
+
+/* MENU BOX */
+.menu{
+    margin-top:60px;
+}
+
+/* LINKS */
+a{
+    display:block;
+    width:260px;
+    margin:15px auto;
+    padding:12px;
+    border:1px solid #00ff9d;
+    color:#00ff9d;
+    text-decoration:none;
+    font-size:18px;
+    transition:0.2s;
+}
+
+a:hover{
+    background:#00ff9d;
+    color:black;
+    transform:scale(1.05);
+}
+
+/* GLITCH EFFECT */
+.glitch{
+    animation:glitch 2s infinite;
+}
+
+@keyframes glitch{
+    0%{text-shadow:2px 0 red;}
+    50%{text-shadow:-2px 0 blue;}
+    100%{text-shadow:2px 0 red;}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1 class="glitch">RRMH ARCHIVE SYSTEM</h1>
+
+<p>RESTRICTED MEDICAL RESEARCH HOSPITAL</p>
+<p>STATUS: ONLINE</p>
+
+<div class="menu">
+
+<a href="logs.html">LOG ARCHIVE</a>
+
+<a href="cctv.html">LIVE CCTV SYSTEM</a>
+
+<a href="personnel.html">PERSONNEL FILES</a>
+
+<a href="admin.html">ADMIN OVERSIGHT PANEL</a>
+
+</div>
+
+<script>
+
+/* =========================
+   SYSTEM MEMORY CORE
+   ========================= */
+
+// create system state if not existing
+if(localStorage.getItem("rrmh_boot") === null){
+    localStorage.setItem("rrmh_boot","true");
+    localStorage.setItem("rrmh_mode","normal");
+    localStorage.setItem("rrmh_visits","1");
+}
+else{
+    let visits = parseInt(localStorage.getItem("rrmh_visits"));
+    localStorage.setItem("rrmh_visits", visits + 1);
+}
+
+// admin mode detection
+let mode = localStorage.getItem("rrmh_mode");
+
+if(mode === "admin"){
+    document.body.style.filter = "contrast(120%) hue-rotate(30deg)";
+}
+
+// =========================
+// LIVE TITLE LOOP
+// =========================
+
+let toggle = true;
+
+setInterval(function(){
+
+    if(toggle){
+        document.title = "RRMH // ARCHIVE ONLINE";
+    } else {
+        document.title = "RRMH // SYSTEM MONITORING ACTIVE";
+    }
+
+    toggle = !toggle;
+
+}, 4000);
+
+// =========================
+// SYSTEM AWARENESS EVENT
+// =========================
+
+setTimeout(function(){
+
+    let warning = document.createElement("p");
+    warning.style.color = "red";
+    warning.innerText = "SYSTEM NOTICE: OBSERVER CONNECTION STABLE";
+    document.body.appendChild(warning);
+
+}, 8000);
+
+// =========================
+// SYSTEM EVOLUTION BASED ON VISITS
+// =========================
+
+setTimeout(function(){
+
+    let visits = parseInt(localStorage.getItem("rrmh_visits"));
+
+    if(visits > 5){
+
+        let msg = document.createElement("p");
+        msg.style.color = "#ff0044";
+        msg.innerText = "SYSTEM NOTE: REPEAT OBSERVATION DETECTED";
+
+        document.body.appendChild(msg);
+    }
+
+}, 12000);
+
+</script>
+
+</body>
+</html>

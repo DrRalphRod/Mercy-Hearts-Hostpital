@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ADMIN PANEL - RRMH</title>
+
+<style>
+
+body{
+    background:black;
+    color:#00ff9d;
+    font-family:monospace;
+    padding:20px;
+    overflow-x:hidden;
+}
+
+h1{
+    border-bottom:1px solid #00ff9d;
+    padding-bottom:10px;
+}
+
+.box{
+    border:1px solid #00ff9d;
+    padding:15px;
+    margin-top:15px;
+    background:rgba(0,255,157,0.03);
+}
+
+.glitch{
+    animation:glitch 1s infinite;
+}
+
+@keyframes glitch{
+    0%{text-shadow:2px 0 red;}
+    50%{text-shadow:-2px 0 blue;}
+    100%{text-shadow:2px 0 red;}
+}
+
+button{
+    background:black;
+    color:#00ff9d;
+    border:1px solid #00ff9d;
+    padding:10px;
+    margin-top:10px;
+    cursor:pointer;
+    font-family:monospace;
+}
+
+button:hover{
+    background:#00ff9d;
+    color:black;
+}
+
+.warning{
+    color:red;
+}
+
+.small{
+    opacity:0.5;
+    font-size:13px;
+}
+
+#line{
+    white-space:pre-wrap;
+}
+
+</style>
+</head>
+
+<body>
+
+<audio id="heartbeat" loop autoplay>
+<source src="heartbeat.mp3" type="audio/mpeg">
+</audio>
+
+<h1 class="glitch">RRMH ADMINISTRATIVE OVERSIGHT PANEL</h1>
+
+<div class="box">
+<p>ACCESS LEVEL: OMEGA</p>
+<p>SYSTEM STATUS: ACTIVE</p>
+<p>TIMELINE CONDITION: UNSTABLE</p>
+<p class="warning">BOUNDARY FAILURE RISK DETECTED</p>
+</div>
+
+<div class="box">
+<h3>ENTITY STATUS</h3>
+
+<p>ENTITY LOCATION: BASEMENT CHAMBER</p>
+<p>CONTAINMENT STATUS: PARTIAL</p>
+<p>REALITY BLEED: INCREASING</p>
+<p class="warning glitch">
+EMPLOYEE 372552 REMAINS UNALIGNED
+</p>
+</div>
+
+<div class="box">
+<h3>LIVE SYSTEM COMMANDS</h3>
+
+<button onclick="fakeReset()">RESET TIMELINE</button>
+
+<button onclick="fakePurge()">PURGE ARCHIVE</button>
+
+<button onclick="fakeStabilise()">STABILISE ENTITY</button>
+
+<p id="line"></p>
+</div>
+
+<div class="box">
+<h3>DELETED LOGS</h3>
+
+<p>LOG 000 — ORIGIN EVENT</p>
+<p>LOG -01 — PRE-STRUCTURE OBSERVATION</p>
+<p>LOG 099 — FULL COLLAPSE TIMELINE</p>
+</div>
+
+<div class="box small">
+<p>
+internal note:<br><br>
+
+the entity was never discovered beneath the hospital<br>
+the hospital was constructed around the entity<br><br>
+
+employee 372552 continues resisting structural integration<br>
+observer contamination probability increasing
+</p>
+</div>
+
+<script>
+
+const hb = document.getElementById("heartbeat");
+
+hb.volume = 0.4;
+
+// fake command outputs
+function fakeReset(){
+
+    document.getElementById("line").innerHTML =
+    "TIMELINE RESET FAILED<br>LOOP ALREADY ACTIVE";
+
+}
+
+function fakePurge(){
+
+    document.getElementById("line").innerHTML =
+    "ARCHIVE PURGE DENIED<br>CORE MEMORY STRUCTURE LOCKED";
+
+}
+
+function fakeStabilise(){
+
+    document.getElementById("line").innerHTML =
+    "ENTITY RESPONSE DETECTED<br>BOUNDARY DISTORTION INCREASING";
+
+    document.body.style.filter = "hue-rotate(40deg)";
+}
+
+// subtle awareness
+setTimeout(()=>{
+
+    let warning = document.createElement("div");
+
+    warning.className = "box glitch";
+
+    warning.innerHTML =
+    "UNAUTHORIZED OBSERVER DETECTED";
+
+    document.body.appendChild(warning);
+
+},15000);
+
+// escalating instability
+setTimeout(()=>{
+
+    document.title = "SYSTEM OVERRIDE DETECTED";
+
+},25000);
+
+</script>
+
+</body>
+</html>

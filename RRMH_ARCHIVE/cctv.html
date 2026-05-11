@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CCTV SYSTEM - RRMH</title>
+
+<style>
+body{
+  background:black;
+  margin:0;
+  font-family:monospace;
+  color:#00ff9d;
+}
+
+.header{
+  padding:10px;
+  border-bottom:1px solid #00ff9d;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  padding:10px;
+}
+
+.feed{
+  border:1px solid #00ff9d;
+  padding:5px;
+}
+
+img{
+  width:100%;
+  filter:contrast(120%) brightness(60%) grayscale(30%);
+}
+
+.glitch{
+  animation:g 1s infinite;
+}
+
+@keyframes g{
+  0%{text-shadow:2px 0 red}
+  50%{text-shadow:-2px 0 blue}
+  100%{text-shadow:2px 0 red}
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- 💓 heartbeat system -->
+<iframe src="audio.html" style="display:none;"></iframe>
+
+<div class="header glitch">
+RRMH LIVE CCTV SYSTEM // TIMELINE SYNC ACTIVE
+</div>
+
+<div class="grid">
+
+<div class="feed">
+<p>HALLWAY 01</p>
+<img id="c1">
+</div>
+
+<div class="feed">
+<p>BASEMENT ACCESS</p>
+<img id="c2">
+</div>
+
+<div class="feed">
+<p>STAFF WING</p>
+<img id="c3">
+</div>
+
+<div class="feed">
+<p>UNKNOWN FEED</p>
+<img id="c4">
+</div>
+
+</div>
+
+<script>
+
+// 🎥 CAMERA TIMELINES (no file extensions)
+const cams = {
+  cam1: ["corridor1","corridor2","corridor3"],
+  cam2: ["basement1","basement2","glitch"],
+  cam3: ["staff1","staff2","corridor1"],
+  cam4: ["glitch","static","glitch2"]
+};
+
+// track positions
+let index = {
+  cam1:0,
+  cam2:0,
+  cam3:0,
+  cam4:0
+};
+
+// 🧠 auto PNG/JPG loader
+function tryLoad(imgElement, baseName){
+
+  let png = `images/${baseName}.png`;
+  let jpg = `images/${baseName}.jpg`;
+
+  let test = new Image();
+
+  test.onload = () => {
+    imgElement.src = png;
+  };
+
+  test.onerror = () => {
+    imgElement.src = jpg;
+  };
+
+  test.src = png;
+}
+
+// 🔁 swap feeds
+function swapFeeds(){
+
+  index.cam1 = (index.cam1 + 1) % cams.cam1.length;
+  tryLoad(document.getElementById("c1"), cams.cam1[index.cam1]);
+
+  index.cam2 = (index.cam2 + 1) % cams.cam2.length;
+  tryLoad(document.getElementById("c2"), cams.cam2[index.cam2]);
+
+  index.cam3 = (index.cam3 + 1) % cams.cam3.length;
+  tryLoad(document.getElementById("c3"), cams.cam3[index.cam3]);
+
+  index.cam4 = (index.cam4 + 1) % cams.cam4.length;
+  tryLoad(document.getElementById("c4"), cams.cam4[index.cam4]);
+
+}
+
+// start system
+swapFeeds();
+setInterval(swapFeeds, 4000);
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>RRMH LOG ARCHIVE</title>
+
+<style>
+body{
+    background:black;
+    color:#00ff9d;
+    font-family:monospace;
+    margin:0;
+    padding:20px;
+}
+
+h1{
+    text-align:center;
+    text-shadow:0 0 10px #00ff9d;
+}
+
+.container{
+    max-width:800px;
+    margin:auto;
+    margin-top:40px;
+}
+
+.log{
+    border:1px solid #00ff9d;
+    padding:15px;
+    margin:15px 0;
+    background:rgba(0,255,157,0.03);
+}
+
+a{
+    color:#00ff9d;
+    text-decoration:none;
+}
+
+a:hover{
+    text-decoration:underline;
+}
+
+.glitch{
+    animation:glitch 1.5s infinite;
+}
+
+@keyframes glitch{
+    0%{text-shadow:2px 0 red;}
+    50%{text-shadow:-2px 0 blue;}
+    100%{text-shadow:2px 0 red;}
+}
+</style>
+
+</head>
+
+<body>
+
+<h1 class="glitch">RRMH LOG ARCHIVE</h1>
+
+<div class="container">
+
+<p><a href="index.html">← RETURN TO MAIN SYSTEM</a></p>
+
+<!-- ADMIN ACCESS LINK -->
+<div class="log">
+<p><a href="admin.html">SYSTEM OVERSIGHT PANEL (RESTRICTED ACCESS)</a></p>
+</div>
+
+<!-- LOG 001 -->
+<div class="log">
+<h3>LOG 001 — INITIAL CONTAINMENT</h3>
+<p>
+Facility operational. Basement section sealed following anomaly detection.<br>
+Subject designation: UNKNOWN ENTITY (later classified as 372552).<br>
+All staff instructed to avoid lower level access.
+</p>
+</div>
+
+<!-- LOG 002 -->
+<div class="log">
+<h3>LOG 002 — FIRST BREACH ATTEMPT</h3>
+<p>
+Security cameras report movement in basement corridor.<br>
+No personnel assigned to area at time of incident.<br>
+Audio recordings contain repeated mechanical heartbeat-like pulses.
+</p>
+</div>
+
+<!-- LOG 010 -->
+<div class="log">
+<h3>LOG 010 — SYSTEM INSTABILITY</h3>
+<p>
+CCTV feeds intermittently failing in basement sector.<br>
+Hallway geometry reports inconsistencies between floorplans.<br>
+Entity presence no longer fully contained.
+</p>
+</div>
+
+<!-- LOG 012 -->
+<div class="log">
+<h3>LOG 012 — CONTAINMENT FAILURE EVENT</h3>
+<p>
+Entity 372552 no longer stationary within chamber 372552.<br>
+Basement access compromised.<br>
+Reports indicate interaction with unidentified personnel (K. RIVERA).
+</p>
+</div>
+
+<!-- LOG 013 -->
+<div class="log">
+<h3>LOG 013 — SYSTEM RESTRUCTURE</h3>
+<p>
+Hospital logic framework unstable.<br>
+Internal records begin self-editing without authorization.<br>
+Reality mapping inconsistent across surveillance layers.
+</p>
+</div>
+
+<!-- LOG 015 -->
+<div class="log">
+<h3>LOG 015 — FULL SYSTEM RECURSION</h3>
+<p>
+Archive system begins repeating prior entries with variations.<br>
+Time-index mismatch detected in CCTV playback loops.<br>
+Staff reports memory overlap between shifts.
+</p>
+</div>
+
+<!-- FINAL LOG -->
+<div class="log">
+<h3>LOG 017 — ADMIN OVERRIDE EVENT</h3>
+<p>
+ADMIN PANEL ACCESS CORRELATES WITH TIMELINE CORRUPTION.<br>
+ENTITY 372552 NOW PRESENT IN MULTIPLE LOCATIONS SIMULTANEOUSLY.<br>
+SYSTEM NOTE: OBSERVER IS NOW PART OF ARCHIVE STRUCTURE.
+</p>
+</div>
+
+</div>
+
+<script>
+
+// system memory sync
+if(!localStorage.getItem("rrmh_mode")){
+    localStorage.setItem("rrmh_mode","normal");
+}
+
+// admin mode visual shift
+if(localStorage.getItem("rrmh_mode")==="admin"){
+    document.body.style.filter="contrast(120%) hue-rotate(30deg)";
+}
+
+// subtle log corruption effect
+setInterval(()=>{
+
+    let logs=document.querySelectorAll(".log");
+
+    let random=Math.floor(Math.random()*logs.length);
+
+    logs[random].style.opacity=0.9;
+
+},5000);
+
+</script>
+
+</body>
+</html>

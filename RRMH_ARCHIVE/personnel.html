@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>PERSONNEL FILES - RRMH</title>
+
+<style>
+body{
+  background:black;
+  color:#00ff9d;
+  font-family:monospace;
+  padding:20px;
+}
+
+.glitch{
+  animation:glitch 1.2s infinite;
+}
+
+@keyframes glitch{
+  0%{text-shadow:2px 0 red,-2px 0 blue;}
+  25%{text-shadow:-2px 0 red,2px 0 blue;}
+  50%{text-shadow:2px 2px red,-2px -2px blue;}
+  75%{text-shadow:-2px 2px red,2px -2px blue;}
+  100%{text-shadow:2px 0 red,-2px 0 blue;}
+}
+
+.box{
+  border:1px solid #00ff9d;
+  padding:15px;
+  margin-top:15px;
+}
+
+.role{
+  opacity:0.8;
+}
+
+.warning{
+  color:#ff004c;
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- 💓 heartbeat persistence -->
+<iframe src="audio.html" style="display:none;"></iframe>
+
+<h1 class="glitch">PERSONNEL DATABASE</h1>
+
+<div class="box">
+<p><span class="role">CEO:</span> Ralph Rod</p>
+<p>Oversight / System Coordination Layer</p>
+</div>
+
+<div class="box">
+<p><span class="role">Branch Manager (Surgical):</span> Christina Forest</p>
+<p>Medical stabilisation protocols / containment adjustment</p>
+</div>
+
+<div class="box">
+<p><span class="role">Branch Manager (Hospice / Systems):</span> Raj Singh</p>
+<p>Signal interpretation / end-stage system alignment</p>
+</div>
+
+<div class="box">
+<p><span class="role">Legal:</span> Jim Singh</p>
+<p>Archive enforcement / continuity validation</p>
+</div>
+
+<div class="box">
+<p><span class="role">Logistics:</span> Will Rob</p>
+<p>Routing / internal transfer of materials and records</p>
+</div>
+
+<div class="box warning glitch">
+<p>
+EMPLOYEE 372552<br>
+STATUS: ORIGIN BOUNDARY NODE<br><br>
+
+classification: unstable identity anchor<br>
+function: prevents full system collapse by remaining unaligned
+</p>
+</div>
+
+<div class="box">
+<p>
+NOTE:<br>
+Personnel records may not reflect independent consciousness.<br>
+All listed roles may represent system functions rather than individuals.
+</p>
+</div>
+
+<!-- 🧠 subtle system awareness -->
+<script>
+let visits = localStorage.getItem("rrmh_seen") || 1;
+visits = parseInt(visits);
+
+// slight escalation of recognition over time
+if(visits > 3){
+  document.body.innerHTML += `
+    <div class="box glitch">
+      SYSTEM NOTE: personnel consistency verified across timeline layers
+    </div>
+  `;
+}
+
+if(visits > 6){
+  setTimeout(()=>{
+    document.body.innerHTML += `
+      <div class="box warning">
+        WARNING: personnel structure may be recursive
+      </div>
+    `;
+  }, 2000);
+}
+</script>
+
+</body>
+</html>
